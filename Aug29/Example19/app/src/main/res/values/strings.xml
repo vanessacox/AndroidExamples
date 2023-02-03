@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Example19</string>
+    <string name="first_name">First name:</string>
+    <string name="last_name">Last name:</string>
+    <string name="enter_name">Enter name:</string>
+    <string name="submit">Submit</string>
+</resources>
