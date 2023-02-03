@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Example13</string>
+    <string name= "FN_NAME">firstName</string>
+</resources>
