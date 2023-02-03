@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:layout_margin="16dp"
+    >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TV 1"
+            android:background="@android:color/holo_red_dark"
+            />
+
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="173dp"
+            android:background="@android:color/holo_blue_bright"
+            android:text="TV 2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TV3"
+            android:background="@android:color/holo_red_light"
+            />
+
+        <TextView
+            android:layout_width="82dp"
+            android:layout_height="113dp"
+            android:background="@android:color/holo_blue_light"
+            android:text="TV4" />
+
+
+</FrameLayout>
