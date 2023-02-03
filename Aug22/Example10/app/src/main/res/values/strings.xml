@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Example10</string>
+    <string name="search">Search:</string>
+    <string name="submit">submit</string>
+</resources>
