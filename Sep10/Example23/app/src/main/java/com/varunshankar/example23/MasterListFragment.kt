@@ -1,11 +1,13 @@
 package com.varunshankar.example23
 
 import android.content.Context
+import android.os.Build
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.os.Bundle
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 
@@ -18,6 +20,7 @@ class MasterListFragment : Fragment() {
         super.onAttach(context)
     }
 
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -36,7 +39,7 @@ class MasterListFragment : Fragment() {
         mRecyclerView!!.layoutManager = layoutManager
 
         //Get data from main activity
-        val customListData = requireArguments().getParcelable<CustomListData>("item_list")
+        val customListData = requireArguments().getParcelable("item_list",CustomListData::class.java)
         val inputList = customListData!!.itemList
 
         //Set the adapter
