@@ -11,7 +11,7 @@ import kotlin.Throws
 object NetworkUtils {
     private const val BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q="
     private const val APPIDQUERY = "&appid="
-    private const val app_id = "9a3a121d504956f79f5300f9acd083d3"
+    private const val app_id = ""
     fun buildURLFromString(location: String): URL? {
         var myURL: URL? = null
         try {
