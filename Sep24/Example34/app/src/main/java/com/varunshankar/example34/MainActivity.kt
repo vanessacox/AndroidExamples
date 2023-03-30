@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private var mEtLocation: EditText? = null
@@ -30,17 +31,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         mBtSubmit!!.setOnClickListener(this)
 
         //Create the view model
-        mWeatherViewModel = ViewModelProvider(this).get(WeatherViewModel::class.java)
+        mWeatherViewModel = ViewModelProvider(this)[WeatherViewModel::class.java]
 
         //Set the observer
         mWeatherViewModel!!.data.observe(this, nameObserver)
     }
 
     //create an observer that watches the LiveData<WeatherData> object
-    val nameObserver: Observer<WeatherData> =
+    private val nameObserver: Observer<WeatherData> =
         Observer { weatherData -> // Update the UI if this data variable changes
             if (weatherData != null) {
-                mTvTemp!!.text = "" + Math.round(weatherData.temperature.temp - 273.15) + " C"
+                mTvTemp!!.text = "" + (weatherData.temperature.temp - 273.15).roundToInt() + " C"
                 mTvHum!!.text = "" + weatherData.currentCondition.humidity + "%"
                 mTvPress!!.text = "" + weatherData.currentCondition.pressure + " hPa"
             }
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    fun loadWeatherData(location: String?) {
+    private fun loadWeatherData(location: String?) {
         //pass the location in to the view model
         mWeatherViewModel!!.setLocation(location)
     }
